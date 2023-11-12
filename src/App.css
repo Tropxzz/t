@@ -1,0 +1,425 @@
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+p {
+  color: rgb(75, 75, 75);
+  transition: all 500ms ease;
+}
+
+#cards {
+  display: flex;
+  gap: 10px;
+  max-width: 916px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  margin-top: 60px;
+  transition: all 500ms ease;
+}
+
+#cards:hover>.card::after {
+  opacity: 1;
+  transition: all 500ms ease;
+}
+
+.card {
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 260px;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  transition: all 500ms ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transition: all 500ms ease;
+}
+
+.card::before,
+.card::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%);
+  z-index: 3;
+  transition: all 500ms ease;
+}
+
+.card::after {
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.1),
+      transparent 40%);
+  z-index: 1;
+  transition: all 500ms ease;
+}
+
+.card>.card-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  inset: 1px;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+  transition: all 500ms ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+span {
+  color: rgb(240, 240, 240);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  margin: 0px;
+  transition: all 500ms ease;
+}
+
+i {
+  color: rgb(240, 240, 240);
+  transition: all 500ms ease;
+}
+
+.card-image {
+  align-items: center;
+  display: flex;
+  height: 140px;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 500ms ease;
+}
+
+.card-image>i {
+  font-size: 6em;
+  opacity: 0.25;
+  transition: all 500ms ease;
+}
+
+.card-info-wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding: 0px 20px;
+  transition: all 500ms ease;
+}
+
+.card-info {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  transition: all 500ms ease;
+}
+
+.card-info>i {
+  font-size: 1em;
+  height: 20px;
+  line-height: 20px;
+  transition: all 500ms ease;
+}
+
+.card-info-title>h3 {
+  font-size: 1.1em;
+  line-height: 20px;
+  transition: all 500ms ease;
+}
+
+.card-info-title>h4 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85em;
+  margin-top: 8px;
+  transition: all 500ms ease;
+}
+
+@media(max-width: 1000px) {
+  body {
+    align-items: flex-start;
+    overflow: auto;
+    transition: all 500ms ease;
+  }
+
+  #cards {
+    max-width: 1000px;
+    padding: 10px 0px;
+    transition: all 500ms ease;
+  }
+
+  .card {
+    flex-shrink: 1;
+    width: calc(50% - 4px);
+    transition: all 500ms ease;
+  }
+}
+
+@media(max-width: 500px) {
+  .card {
+    height: 180px;
+    transition: all 500ms ease;
+  }
+
+  .card-image {
+    height: 80px;
+    transition: all 500ms ease;
+  }
+
+  .card-image>i {
+    font-size: 3em;
+    transition: all 500ms ease;
+  }
+
+  .card-info-wrapper {
+    padding: 0px 10px;
+    transition: all 500ms ease;
+  }
+
+  .card-info>i {
+    font-size: 0.8em;
+    transition: all 500ms ease;
+  }
+
+  .card-info-title>h3 {
+    font-size: 0.9em;
+    transition: all 500ms ease;
+  }
+
+  .card-info-title>h4 {
+    font-size: 0.8em;
+    margin-top: 4px;
+    transition: all 500ms ease;
+  }
+}
+
+@media(max-width: 320px) {
+  .card {
+    width: 100%;
+    transition: all 500ms ease;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  transition: all 500ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    transition: all 500ms ease;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+  transition: all 500ms ease;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+  transition: all 500ms ease;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+
+  from,
+  to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+h1 {
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: clamp(2em, 2vw, 4em);
+  font-weight: 400;
+  margin: 0px;
+  padding: 20px;
+  text-align: center;
+  transition: all 500ms ease;
+}
+
+h1>.magic {
+  display: inline-block;
+  position: relative;
+  transition: all 500ms ease;
+}
+
+h1>.magic>.magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+  transition: all 500ms ease;
+}
+
+h1>.magic>.magic-star>svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+  transition: all 500ms ease;
+}
+
+h1>.magic>.magic-star>svg>path {
+  fill: var(--violet);
+  transition: all 500ms ease;
+}
+
+h1>.magic>.magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  transition: all 500ms ease;
+}
+
+.dollar-icon {
+  background-image: url('icons/money.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 2px;
+  height: 90px;
+  width: 90px;
+  transition: all 500ms ease;
+}
+
+.book-icon {
+  background-image: url('icons/library.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 2px;
+  height: 90px;
+  width: 90px;
+  transition: all 500ms ease;
+}
+
+.person-icon {
+  background-image: url('icons/man.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 2px;
+  height: 90px;
+  width: 90px;
+  z-index: 500;
+  transition: all 500ms ease;
+}
+
+/* Added code */
+@media (max-width: 916px) {
+  #cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 500ms ease;
+  }
+
+  .card {
+    margin: 10px;
+    transition: all 500ms ease;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    height: 200px;
+    transition: all 500ms ease;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    height: 180px;
+    transition: all 500ms ease;
+  }
+}
+
+#menu-background-image {
+  background-image: url("https://images.unsplash.com/photo-1699031097480-a4cd3f79dcc3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center 100%;
+  background-size: 110vmax;
+  height: 120%;
+  left: 0px;
+  opacity: 0.20;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100%;
+  z-index: 0;
+  transition: all 500ms ease;
+}
